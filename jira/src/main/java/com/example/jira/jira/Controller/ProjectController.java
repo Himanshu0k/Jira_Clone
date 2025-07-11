@@ -13,11 +13,19 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(
+//        origins = "http://localhost:5173", // your frontend origin
+//        allowedHeaders = "*",
+//        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE},
+//        allowCredentials = "true"
+//)
 @RequestMapping("/api/project")
 public class ProjectController {
     @Autowired private ProjectRepository projectRepository;
     @Autowired private UserRepository userRepository;
 
+    @CrossOrigin
     @PostMapping("/create")
     public ResponseEntity<Project> createProject(@RequestBody Project project, Principal principal) {
         User user = userRepository.findByUsername(principal.getName()).orElseThrow();
@@ -27,7 +35,8 @@ public class ProjectController {
         return ResponseEntity.ok(projectRepository.save(project));
     }
 
-    @GetMapping("/")
+//    @CrossOrigin
+    @GetMapping
     public ResponseEntity<List<Project>> getProjects(Principal principal) {
         User user = userRepository.findByUsername(principal.getName()).orElseThrow();
         List<Project> projects = projectRepository.findByCreatedBy(user);

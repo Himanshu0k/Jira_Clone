@@ -1,4 +1,4 @@
-package com.example.jira.jira.controller;
+package com.example.jira.jira.Controller;
 
 import com.example.jira.jira.Dto.CreateIssueRequest;
 import com.example.jira.jira.Entity.Issue;
@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api/issue")
 public class IssueController {
     @Autowired
@@ -45,7 +46,6 @@ public class IssueController {
                 .build();
         return ResponseEntity.ok(issueRepository.save(issue));
     }
-
 
     @GetMapping("/project/{projectId}")
     public ResponseEntity<List<Issue>> getIssueByProject(@PathVariable Long projectId) {

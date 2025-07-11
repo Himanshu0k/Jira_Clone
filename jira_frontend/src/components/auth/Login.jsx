@@ -23,7 +23,7 @@ export const Login = () => {
             localStorage.setItem("token", token);
             console.log("Login successful:", response.data);
             alert("Login successful ✅");
-            navigate("/dashboard");
+            navigate("/admin-dashboard");
         } catch (error) {
             console.error("Login failed:", error);
             alert("Invalid credentials ❌");

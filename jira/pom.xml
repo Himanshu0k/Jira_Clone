@@ -8,11 +8,11 @@
 		<version>3.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.jira</groupId>
+	<groupId>com.example.jira</groupId>
 	<artifactId>jira</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jira</name>
-	<description>JIRA Project with Spring Boot</description>
+	<description>JIRA project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -59,6 +59,13 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<!--		<dependency>-->
+		<!--			<groupId>org.projectlombok</groupId>-->
+		<!--			<artifactId>lombok</artifactId>-->
+		<!--			<version>1.18.30</version>-->
+		<!--			<scope>provided</scope>-->
+		<!--		</dependency>-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -69,46 +76,50 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
 		<!--		<dependency>-->
 		<!--			<groupId>io.jsonwebtoken</groupId>-->
-		<!--			<artifactId>jjwt</artifactId>-->
-		<!--			<version>0.9.1</version>-->
+		<!--			<artifactId>jjwt-api</artifactId>-->
+		<!--			<version>0.12.6</version>-->
 		<!--		</dependency>-->
-
+		<!--		<dependency>-->
+		<!--			<groupId>io.jsonwebtoken</groupId>-->
+		<!--			<artifactId>jjwt-impl</artifactId>-->
+		<!--			<version>0.12.6</version>-->
+		<!--			<scope>runtime</scope>-->
+		<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>io.jsonwebtoken</groupId>-->
+		<!--			<artifactId>jjwt-jackson</artifactId>-->
+		<!--			<version>0.12.6</version>-->
+		<!--			<scope>runtime</scope>-->
+		<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<!-- Only needed for Java 9+ -->
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.1</version>
 		</dependency>
-
 		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt-api</artifactId>
-			<version>0.12.3</version>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt-impl</artifactId>
-			<version>0.12.3</version>
-			<scope>runtime</scope>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
 		</dependency>
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt-jackson</artifactId>
-			<version>0.12.3</version>
-			<scope>runtime</scope>
-		</dependency>
-
-
-
-		<dependency>
-			<groupId>org.apache.httpcomponents.client5</groupId>
-			<artifactId>httpclient5</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 
 	<build>
